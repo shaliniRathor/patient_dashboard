@@ -75,6 +75,10 @@ export default function All_Patient() {
 
   const deletebutton = async (id) => {
     console.log(id);
+    let deleteBox= window.confirm("Do u want to delete the patient")
+    if (!deleteBox) {
+      return
+    }
     await axios
       .delete(`${BASEURL}/api/delete/${id}`)
       .then((res) => {
